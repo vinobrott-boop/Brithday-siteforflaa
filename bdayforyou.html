@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAIII, THIS IS FOR YOU WHHEHEHEH🤭👅</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+
+  .box {
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    max-width: 350px;
+    animation: fadeIn 1s ease;
+  }
+
+  .hidden { display: none; }
+
+  button {
+    background: #ff4d6d;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    margin: 10px 0;
+  }
+
+  .heart {
+    position: fixed;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: fall 4s linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(-10vh); opacity: 1; }
+    100% { transform: translateY(110vh); opacity: 0; }
+  }
+
+  @keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+</style>
+</head>
+<body>
+
+<!-- Musik -->
+<audio id="music" loop>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Halaman 1 -->
+<div class="box" id="page1">
+  <h1>HAIII BAEE, I made this all for you, so I hope you like ittt👉🏻👈🏻🥰🥰</h1>
+  <p>and here I have something for you, please open it baeee</p>
+  <button onclick="nextPage(1)">press this, hihihi🤭👅</button>
+</div>
+
+<!-- Halaman 2 -->
+<div class="box hidden" id="page2">
+  <h1>I know today is your special day cuz today is your birthdayyy so I made this all just for my lovee😻👅</h1>
+  <p>and also i don't know if this will work normally, but i hope you really like ittt😢😔🥰🥰</p>
+  <button onclick="nextPage(2)">Next ➜<Press ts baeee/button>
+</div>
+
+<!-- Halaman 3 -->
+<div class="box hidden" id="page3">
+  <h1>whoo this pretty girlss</h1>
+  <img src="foto.jpg" alt="Foto Kamu">
+  <p>I just want to say that you are beautiful, cute, and gorgeous. so if you say you are ugly, I will be sad.😨😨😢.</p>
+  <button onclick="nextPage(3)">pencet here hwhwhhw
+</div>
+
+<!-- Halaman 4 -->
+<div class="box hidden" id="page4">
+  <h1>I WANNA SAY THISS MESKIPUN AKU MALUUU
+  <p>
+    I want to say that you are the person who makes my world colorful, and because of you, I am more enthusiastic about living my day.<br>
+    I HOPE YOU'RE ALWAYS HEALTHY AND STAY WITH ME HEHEHEH😝😛❤️
+  </p>
+  <button onclick="nextPage(4)">PENCETTT</button>
+</div>
+
+<!-- Halaman 5 -->
+<div class="box hidden" id="page5">
+  <h1>Selamat HAPPY BRITHDAYY BAEE, AKU SENANG BISA BIKININ KAMU GINIAN HEHEHE</h1>
+  <p>
+    I don't know what to say anymore,
+    I just want you to stay who you are now and never leave me alone, I'm scared🥺💦🍆
+  </p>
+  <p>- I made this all with my heart, from Kelvin</p>
+</div>
+
+<script>
+function nextPage(n){
+  document.getElementById("page"+n).classList.add("hidden");
+  document.getElementById("page"+(n+1)).classList.remove("hidden");
+
+  // mulai musik pas pertama klik
+  if(n === 1){
+    document.getElementById("music").play();
+    startHearts();
+  }
+}
+
+function startHearts(){
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️🩷";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random()*2) + "s";
+    document.body.appendChild(heart);
+    setTimeout(()=> heart.remove(), 5000);
+  }, 300);
+}
+</script>
+
+</body>
+</html>
